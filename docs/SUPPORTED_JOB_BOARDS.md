@@ -18,9 +18,14 @@ are shared helpers and are not loaded as providers.
 | HigherEdJobs | RSS | Reads the public `https://www.higheredjobs.com/rss/categoryFeed.cfm?catID={catID}` feed and parses it in-process. Configure with `provider: higheredjobs` and optional `cat_id` (default 68 = Higher Education). Not auto-detected — requires explicit `provider:` config. |
 | IBM Careers | API | Posts to IBM's public careers search API and supports optional IBM facet filters in the portal entry. |
 | JibeApply | API | Auto-detects `https://<slug>.jibeapply.com/jobs` careers URLs (rewriting `/jobs` to the public `/api/jobs` endpoint); paginates `?page=N` up to `max_pages` (default 50), warning if a tenant's postings exceed the cap. Also supports branded/iCIMS-hosted sites at their own `/jobs` path via an explicit `provider: jibeapply` + `api:` URL. |
+| Jobbank | RSS | Reads Jobbank's public RSS feed. Configure with `provider: jobbank` plus `key`, `location`, `remote`, `since`, and `limit`. |
+| Jobdanmark | API | Reads Jobdanmark's public JSON search endpoint. Configure with `provider: jobdanmark` plus `text`, `municipality`, `region`, `job_type`, `page`, and `limit`. |
+| Jobindex | Parser | Reads Jobindex search pages and parses the embedded Stash payload. Configure with `provider: jobindex` plus `query`, `jobage`, `sort`, `page`, and `limit`. |
+| Jobnet | API | Reads Jobnet's public FindJob JSON endpoint. Configure with `provider: jobnet` plus `search_string`, `region`, `work_hours`, `duration`, `postal_code`, `radius`, and `limit`. |
 | Jobstreet / SEEK | API | Uses the public SEEK chalice-search JSON API for Jobstreet and SEEK sites. Configure explicitly with `provider: jobstreet`. |
 | Landing.jobs | API | Reads the board-wide `https://landing.jobs/api/v1/jobs` JSON feed (tech, Europe). Configure with `provider: landingjobs`; company is derived from the posting URL slug. |
 | Lever | API | Auto-detects `https://jobs.lever.co/<slug>` boards and uses Lever's public postings endpoint. |
+| LinkedIn Jobs | Parser | Reads LinkedIn's public guest job-search HTML endpoint without authentication, cookies, or profile access. Configure with `provider: linkedin` plus `query`, `location`, `jobage`, `remote`, `page`, and `limit`. Keep limits low and use for personal job-search discovery only. |
 | Local parser | Parser | Runs an in-repo parser command from `portals.yml`. Use this for stable SSR or HTML pages that need a custom extractor. |
 | NoDesk | RSS | Reads the public `https://nodesk.co/remote-jobs/index.xml` feed and parses it in-process. Configure with `provider: nodesk`. |
 | Personio | RSS | Auto-detects `<slug>.jobs.personio.de` or `.com` hosts and parses the public XML jobs feed. |

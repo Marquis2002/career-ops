@@ -273,6 +273,7 @@ Default modes are in `modes/` (English). Additional language-specific modes are 
 | Wants to debrief after a real interview and close gaps | `interview/debrief` |
 | Wants to generate CV/PDF | `pdf` |
 | Evaluates a course/cert | `training` |
+| Wants a skill-gap learning plan | `upskill` |
 | Evaluates portfolio project | `project` |
 | Asks about application status | `tracker` |
 | Fills out application form | `apply` |
